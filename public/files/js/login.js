@@ -14,7 +14,6 @@ $("#login").submit(function( event ) {
     // Put the results in a div(Login olurken tokenımızı tutuyoruz.)
     posting.done(function( data ) {
       if(data.success){
-        //alert("Kullanıcı girişi başarılı!!")
         //console.log(data)
         fetch("http://localhost:3000/user/all", {
             method: 'POST',

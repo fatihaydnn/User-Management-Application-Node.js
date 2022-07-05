@@ -47,13 +47,6 @@ router.post(
     userController.getUserDetail
 );
 
-// router.get(
-//     '/user', function(req, res) {
-//     userController.getUsers
-//     res.render('user');
-
-//   });
-
 router.get(
     "/user",
     validationController.validateRequest,

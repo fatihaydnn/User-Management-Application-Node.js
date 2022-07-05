@@ -82,8 +82,6 @@ class UserController {
         res.send(result);
     }
 
-    
-
     async getUserDetail(req, res, next){
                 const { user } = req.body;
                 let result = await userService.getProfileById(user.userId);

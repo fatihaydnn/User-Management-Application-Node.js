@@ -35,6 +35,7 @@ const startApp = async () => {
             app.use(express.text({ limit: '50mb', extended: true }));
             
             app.set('view engine', 'ejs')
+            app.set("views",path.resolve(__dirname,"views/user"))
 
             app.get('/login', function (req, res) {
                 res.sendFile(path.join(__dirname, 'public/views/home/login.html'));
