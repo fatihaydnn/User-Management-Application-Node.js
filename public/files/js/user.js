@@ -1,12 +1,15 @@
 
 $(document).ready(function() {
     console.log( "ready!" );
+    let cookieObject = JSON.parse(document.cookie); 
+    let token = cookieObject.tokenData.token;
+    
     fetch("http://localhost:3000/user/all", {
         method: 'GET',
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
-           //token: data.data.token BURADA TARAYICIDAN OKUDUGUN TOKEN YAZILACAK
+           token: token
         }
       })
         .then((result) => result.json())

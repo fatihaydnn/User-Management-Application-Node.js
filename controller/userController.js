@@ -77,16 +77,17 @@ class UserController {
     };
 
     async getUsers(req, res, next) {
-        console.log(req.body)
+        const { userId, email, name, surname } = req.body.user;
+        console.log(userId, email, name, surname);
         let result = await userService.getUsers();
         res.send(result);
     }
 
-    async getUserDetail(req, res, next){
-                const { user } = req.body;
-                let result = await userService.getProfileById(user.userId);
-                res.send(result);
-            }
+    async getUserDetail(req, res, next) {
+        const { userId } = req.body.user;
+        let result = await userService.getProfileById(userId);
+        res.send(result);
+    }
 }
 
 module.exports = UserController;

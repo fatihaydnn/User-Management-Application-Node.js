@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const cookieParser = require("cookie-parser");
 const path = require('path');
 const { success, error } = require("consola");
 const { DB, PORT } = require("./config");
@@ -26,16 +27,15 @@ const startApp = async () => {
                 optionsSuccessStatus: 200
             };
 
-            
-
+                       
             app.use(cors(corsOptions));
             app.use(express.static('public'));
             app.use(express.json({ limit: '50mb', extended: true }));
             app.use(express.urlencoded({ limit: '50mb', extended: true }));
             app.use(express.text({ limit: '50mb', extended: true }));
             
-            app.set('view engine', 'ejs')
-            app.set("views",path.resolve(__dirname,"views/user"))
+            app.use(cookieParser());
+
 
             app.get('/login', function (req, res) {
                 res.sendFile(path.join(__dirname, 'public/views/home/login.html'));

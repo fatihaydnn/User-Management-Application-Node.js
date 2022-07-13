@@ -15,22 +15,9 @@ $("#login").submit(function( event ) {
     posting.done(function( data ) {
       if(data.success){
         //console.log(data)
-        fetch("http://localhost:3000/user/all", {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                 token: data.data.token
-            }
-          })
-            .then((result) => result.json())
-            .then((result) => {
-               console.log(result)
-               alert("Kullanıcı girişi başarılı!!")
-            })
-            .catch((error) => {
-                console.log(error)
-            })
+        // burada token ı cookie ye yaz
+        document.cookie = JSON.stringify({tokenData : data.data });
+        document.location.href = "/user";
       }else{
         alert("Kullanıcı Bulunamadı...")
       }

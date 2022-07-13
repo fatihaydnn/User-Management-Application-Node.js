@@ -36,7 +36,7 @@ router.post(
 router.get(
     "/all",
     validationController.validateRequest,
-   // authorizationController.validateToken,
+    authorizationController.validateToken,
     userController.getUsers
 );
 
