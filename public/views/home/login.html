@@ -7,9 +7,11 @@
   <title>Login</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  
 </head>
 
 <body>
+  
   <br />
   <br />
   <div class="row">
@@ -20,21 +22,28 @@
       
         <form id="login">
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            
+            <p>
+              <label id="email" for="exampleInputEmail1" class="form-label" type="email">Email address <span>(E-Mail Bilgilerini Giriniz!!)</span></label>
+              <br />
+              <input class="col-md-12" id="email" name="email" type="email" required>
+            </p>
+
           </div>
           <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input name="password" type="password" class="form-control" id="password">
+            
+            <p>
+              <label for="exampleInputPassword1" class="form-label">Password <span>(Şifrenizi Giriniz!!)</span></label>
+              <br />
+              <input class="col-md-12" id="password" type="password" name="password" required>
+            </p>
+
           </div>
 
           <button type="submit" class="btn btn-primary">Login</button>
-        
           <button class="btn btn-light"> 
             <a href="http://localhost:3000/register">Register</a>
           </button>
-  
           <button class="btn btn-light"> 
             <a href="http://localhost:3000/user">Users</a>
           </button>
@@ -46,7 +55,7 @@
 
     </div>
   </div>
-
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>

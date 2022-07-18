@@ -7,6 +7,7 @@ const UserService = require("../service/userService");
 const userService = new UserService();
 
 const ResponseSerializer = require("../serializers/responseSerializers");
+const res = require("express/lib/response");
 const serializer = new ResponseSerializer();
 
 class UserController {
@@ -88,6 +89,10 @@ class UserController {
         let result = await userService.getProfileById(userId);
         res.send(result);
     }
+
+
 }
+
+
 
 module.exports = UserController;

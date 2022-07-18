@@ -49,6 +49,7 @@ const startApp = async () => {
                 res.sendFile(path.join(__dirname, 'public/views/home/user.html'));
             });
             
+            
             //api paths
             app.use("/user", userRoutes);
             

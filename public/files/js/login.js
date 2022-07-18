@@ -16,7 +16,7 @@ $("#login").submit(function( event ) {
       if(data.success){
         //console.log(data)
         // burada token ı cookie ye yaz
-        document.cookie = JSON.stringify({tokenData : data.data });
+        document.cookie = JSON.stringify({tokenData : data.data})
         document.location.href = "/user";
       }else{
         alert("Kullanıcı Bulunamadı...")
@@ -28,5 +28,3 @@ $("#login").submit(function( event ) {
         console.log(data)
        });
   });
-
-

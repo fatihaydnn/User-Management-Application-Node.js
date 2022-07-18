@@ -54,11 +54,15 @@ router.get(
     userController.getUsers
 );
 
-// router.get(
-//     "/user",async (req,res) => {
-//         const data = await user.find();
-//         res.render("user",{data});
-//     });
+
+
+// router.post(
+//     "/logout",
+//     validationController.validateRequest,
+//     apiLogController.insertLog,
+//     authorizedController.logout
+// );
+
 
 module.exports = router;
 

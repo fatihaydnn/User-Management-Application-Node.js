@@ -19,6 +19,7 @@ $("#register").submit(function( event ) {
   posting.done(function( data ) {
     console.log(data)  
     alert("Başarıyla Kayıt Olundu!!")
+    document.location.href = "/user";
    });
 
   posting.fail(function( data ) {
