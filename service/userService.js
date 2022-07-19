@@ -21,6 +21,10 @@ class UserService {
     async getUsers() {
         return await userRepository.getUsers();
     }
+
+    async deleteById(id,entity){
+        return await userRepository.deleteById(id,entity);
+    }
 }
 
 module.exports = UserService;

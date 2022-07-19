@@ -74,6 +74,22 @@ class UserRepository {
         }
     }
 
+    async deleteById(id, entity){
+        try{
+            let result = await User.findByIdAndUpdate(id, { $set: entity }, { new: true });
+            return{
+                success: true,
+                data: result
+            }
+        }catch(error){
+            console.log(error)
+            return {
+                success: false,
+                errorMessage: error,
+            }
+        }
+    }
+
     async getProfileByEmail(email) {
         let result;
         try {

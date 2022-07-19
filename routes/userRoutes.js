@@ -54,7 +54,13 @@ router.get(
     userController.getUsers
 );
 
-
+router.post(
+    "/delete",
+    check(["id"]).exists().notEmpty().isMongoId(),
+    validationController.validateRequest,
+    authorizationController.validateToken,
+    userController.deleteById
+);
 
 // router.post(
 //     "/logout",

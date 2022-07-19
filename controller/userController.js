@@ -6,8 +6,10 @@ const jwt = require("jsonwebtoken");
 const UserService = require("../service/userService");
 const userService = new UserService();
 
+const LogService = require("../service/logService");
+const logService = new LogService();
+
 const ResponseSerializer = require("../serializers/responseSerializers");
-const res = require("express/lib/response");
 const serializer = new ResponseSerializer();
 
 class UserController {
@@ -70,6 +72,34 @@ class UserController {
     //     let result = await emailService.getProfileByEmail(email);
     //     res.send(result);
     // }
+
+    async deleteById(req, res, next) {
+        try {
+            const { user, id } = req.body;
+            console.log(id)
+            // token parse dan user nesnesi geldi
+            // id = silmek istediğim id post methodundan göndercez
+            // user => işlemi yapan kişi (token)
+            const result = await userService.deleteById(id, { isDeleted: true });
+            if (result.success) {
+                console.log("controller log");
+                // log atabiirsin örneğin
+                // veya başka bir servis çağırabilirsin örn user a bağlı başka bir servis
+                let logResponse = await logService.createLog({
+                    user: user.userId,
+                    type: req.method
+                });
+                console.log(logResponse)
+            }
+            res.send(result);
+        } catch (error) {
+            console.log(err)
+            return res.status(400).json({
+                success: false,
+                errorMessage: "Error!"
+            });
+        }
+    }
 
     async login(req, res, next) {
         let { email, password } = req.body;
