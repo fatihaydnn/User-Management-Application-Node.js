@@ -52,7 +52,7 @@ function deleteUser(userId, index) {
       if (result.success) {
 
         console.log("oldu!");
-
+        $('#'+index).remove();
 
       } else {
         // hata
