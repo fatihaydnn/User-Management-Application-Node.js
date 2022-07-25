@@ -49,6 +49,9 @@ const startApp = async () => {
                 res.sendFile(path.join(__dirname, 'public/views/home/user.html'));
             });
             
+            app.get('/log', function (req, res) {
+                res.sendFile(path.join(__dirname, 'public/views/home/log.html'));
+            });
             
             //api paths
             app.use("/user", userRoutes);

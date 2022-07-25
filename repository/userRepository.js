@@ -142,7 +142,7 @@ class UserRepository {
                 );
 
                 result = serializer.tokenResponseSerializers(user, token);
-
+                    
                 return {
                     success: true,
                     data: result,

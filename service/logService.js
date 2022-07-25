@@ -9,6 +9,8 @@ class LogService {
     async getLogs() {
         return await logRepository.getLogs();
     }
+
+    
 }
 
 module.exports = LogService;

@@ -53,16 +53,3 @@ schema.set('toJSON', {
 });
 
 module.exports = mongoose.model("User", schema);
-
-// user.js modeli içinde ki 
-// address: [{
-//     type: mongoose.Schema.Types.ObjectId,
-//     ref: "Address",
-// }],
-
-
-// address.js modeli 
-// user: {
-//     type: mongoose.Schema.Types.ObjectId,
-//     ref: 'User'
-// },

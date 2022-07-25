@@ -64,7 +64,3 @@ function deleteUser(userId, index) {
       console.log(error)
     })
 }
-
-// function Geeks() {
-//   $("#row1").remove();
-// }

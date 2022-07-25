@@ -7,7 +7,7 @@ class LogRepository {
         try {
             let newLog = new Log({
                 ...log,
-                createdAt: Date.now()
+                createdAt: Date.now().toString()
             });
 
             result = await newLog.save();

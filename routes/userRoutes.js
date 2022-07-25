@@ -8,9 +8,13 @@ const validationController = new ValidationController();
 const UserController = require("../controller/userController");
 const userController = new UserController();
 
+const LogController = require("../controller/logController");
+const logController = new LogController();
+
 const AuthorizationController = require("../controller/authorizationController");
 const res = require("express/lib/response");
 const user = require("../model/user");
+const log = require("../model/log");
 const authorizationController = new AuthorizationController();
 
 router.post(
@@ -52,6 +56,13 @@ router.get(
     validationController.validateRequest,
     authorizationController.validateToken,
     userController.getUsers
+);
+
+router.get(
+    "/log",
+    validationController.validateRequest,
+    //authorizationController.validateToken,
+    logController.getLogs
 );
 
 router.post(
