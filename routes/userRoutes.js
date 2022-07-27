@@ -73,13 +73,5 @@ router.post(
     userController.deleteById
 );
 
-// router.post(
-//     "/logout",
-//     validationController.validateRequest,
-//     apiLogController.insertLog,
-//     authorizedController.logout
-// );
-
-
 module.exports = router;
 

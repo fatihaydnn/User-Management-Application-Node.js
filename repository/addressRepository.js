@@ -1,16 +1,16 @@
-const Log = require("../model/log");
+const Address = require("../model/address");
 
 
-class LogRepository {
-    async createLog(log) {
+class AddressRepository {
+    async createAddress(address) {
         let result;
         try {
-            let newLog = new Log({
-                ...log,
+            let newAddress = new Address({
+                ...address,
                 createdAt: Date.now().toUTCString()
             });
 
-            result = await newLog.save();
+            result = await newAddress.save();
             return {
                 success: result !== null ? true : false,
                 data: result
@@ -24,10 +24,10 @@ class LogRepository {
     };
 
     
-    async getLogs(){
+    async getAddresss(){
         let result;
         try{
-            result = await Log.find({isDeleted : false}).populate('user').select('-user.password');
+            result = await Address.find({isDeleted : false}).populate('user').select('-user.password');
             return {
                 success: true,
                 data: result
@@ -41,4 +41,4 @@ class LogRepository {
     }
 }
 
-module.exports = LogRepository;
+module.exports = AddressRepository;

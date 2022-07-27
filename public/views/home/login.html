@@ -7,58 +7,82 @@
   <title>Login</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-  
+
 </head>
 
 <body>
-  
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand">User Management Application</a>
+    
+    <div class="collapse navbar-collapse">
+
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="http://localhost:3000/login">Login</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="http://localhost:3000/register">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:3000/user">Users</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:3000/log">Log</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:3000/address">Adres</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="text-right">
+      <a href="https://www.linkedin.com/in/fatiihaydn/">Hakkında</a>
+      <a href="https://web.whatsapp.com/send?text=Selam&phone=+905364934599">İletişim</a>
+    </div>
+  </nav>
+
   <br />
   <br />
+
   <div class="row">
     <div class="col-md-3">
 
     </div>
     <div class="col-md-6">
-      
-        <form id="login">
-          <div class="mb-3">
-            
-            <p>
-              <label id="email" for="exampleInputEmail1" class="form-label" type="email">Email address <span>(E-Mail Bilgilerini Giriniz!!)</span></label>
-              <br />
-              <input class="col-md-12" id="email" name="email" type="email" required>
-            </p>
 
-          </div>
-          <div class="mb-3">
-            
-            <p>
-              <label for="exampleInputPassword1" class="form-label">Password <span>(Şifrenizi Giriniz!!)</span></label>
-              <br />
-              <input class="col-md-12" id="password" type="password" name="password" required>
-            </p>
+      <form id="login">
+        <div class="mb-3">
+          <label class="form-label">Email address</label>
+          <input id="email" name="email" type="email" class="form-control" required>
 
-          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input id="password" name="password" type="password" class="form-control" required>
 
-          <button type="submit" class="btn btn-primary">Login</button>
-          <button class="btn btn-light"> 
-            <a href="http://localhost:3000/register">Register</a>
-          </button>
-          <button class="btn btn-light"> 
-            <a href="http://localhost:3000/user">Users</a>
-          </button>
-
-        </form>
+        </div>
         
+        <button type="submit" class="btn btn-primary">Login User</button>
+
+        <!-- <button class="btn btn-light">
+          <a href="http://localhost:3000/register">Register</a>
+        </button>
+        <button class="btn btn-light">
+          <a href="http://localhost:3000/user">Users</a>
+        </button> -->
+
+      </form>
+
     </div>
     <div class="col-md-3">
 
     </div>
   </div>
-  
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
   <script src="../../files/js/login.js"></script>
 </body>
 
