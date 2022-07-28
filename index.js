@@ -58,6 +58,10 @@ const startApp = async () => {
                 res.sendFile(path.join(__dirname, 'public/views/home/address.html'));
             });
 
+            app.get('/addressAdd', function (req, res) {
+                res.sendFile(path.join(__dirname, 'public/views/home/addressAdd.html'));
+            });
+
 
             //api paths
             app.use("/user", userRoutes);

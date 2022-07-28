@@ -6,6 +6,9 @@ class StreetService {
         return await streetRepository.getStreets(districtCode);
     }
 
+    async getStreetByCode(streetCode) {
+        return await streetRepository.getStreetByCode(streetCode);
+    }
 }
 
 module.exports = StreetService;

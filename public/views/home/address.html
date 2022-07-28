@@ -27,9 +27,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="http://localhost:3000/log">Log</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="http://localhost:3000/address">Adres</a>
-                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Adres
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu">
+                      <li><a class="nav-link" href="http://localhost:3000/addressAdd">Adres Ekle</a></li>
+                      <li><a class="nav-link" href="http://localhost:3000/address">Adres Düzenle</a></li>
+                    </ul>
+                  </li>
             </ul>
 
         </div>
@@ -47,11 +53,50 @@
 
     </br>
     <div class="row">
-        <div class="column">
 
+    </div>
+    <div class="column">
+        <div class="row">
+            <div class="col-md-2">
+
+            </div>
+
+            <div class="col-md-8">
+                <div class="list-group">
+                    <a class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">List group item heading</h5>
+                      </div>
+                      <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                    </a>
+
+                    <a class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">List group item heading</h5>
+                      </div>
+                      <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                    </a>
+
+                    <a class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">List group item heading</h5>
+                      </div>
+                      <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                    </a>
+
+                    <br/>
+                    <br/>
+                    <br/>
+                    
+                  </div>
+            </div>
+
+            <div class="col-md-2">
+                
+            </div>
         </div>
 
-        <div class="column">
+        <!-- <div class="column">
             <div class="row">
                 <div class="col-md-2">
 
@@ -75,7 +120,7 @@
 
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -83,7 +128,6 @@
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <script src="../../files/js/address.js"></script>
 </body>
 
 </html>

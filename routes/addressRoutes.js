@@ -35,8 +35,8 @@ router.get(
 router.post(
     "/all",
     validationController.validateRequest,
-    authorizationController.validateToken,
-    addressController.getAddresss
+    //authorizationController.validateToken,
+    addressController.createAddress
 );
 
 

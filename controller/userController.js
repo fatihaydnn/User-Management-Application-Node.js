@@ -67,12 +67,6 @@ class UserController {
         res.send(result);
     };
 
-    // async getProfileByEmail(req,res,next){
-    //     const { email} = req.body.email;
-    //     let result = await emailService.getProfileByEmail(email);
-    //     res.send(result);
-    // }
-
     async deleteById(req, res, next) {
         try {
             const { user, id } = req.body;

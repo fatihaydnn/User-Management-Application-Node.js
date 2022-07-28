@@ -6,6 +6,9 @@ class DistrictService {
         return await districtRepository.getDistricts(cityCode);
     }
 
+    async getDistrictByCode(districtCode) {
+        return await districtRepository.getDistrictByCode(districtCode);
+    }
 }
 
 module.exports = DistrictService;

@@ -34,6 +34,42 @@ class AddressController {
         let result = await streetService.getStreets(districtCode);
         res.send(result);
     }
+
+    async createAddress(req, res, next) {
+        const { address } = req.body;
+        const cityData = await cityService.getCityByCode(address.city);
+        const districtData = await districtService.getDistrictByCode(address.district);
+        const streetData = await streetService.getStreetByCode(address.street);
+
+        console.log(cityData, districtData, streetData)
+
+        if (cityData.success && districtData.success && streetData.success) {
+            address.city = cityData.data._id;
+            address.district = districtData.data._id;
+            address.street = streetData.data._id;
+
+            console.log(address)
+            const result = await addressService.createAddress(address);
+
+            if (result.success) {
+                res.send({
+                    success: true,
+                    data: result
+                });
+            } else {
+                res.send({
+                    success: false,
+                    errorMessage: "Adress Kayıt Edilemedi."
+                })
+            }
+        } else {
+            res.send({
+                success: false,
+                errorMessage: "İl/İlçe/Sokak Bilgisi Çözümlenemedi"
+            })
+        }
+    };
+
 }
 
 module.exports = AddressController;

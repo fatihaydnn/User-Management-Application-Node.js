@@ -7,7 +7,7 @@ class AddressRepository {
         try {
             let newAddress = new Address({
                 ...address,
-                createdAt: Date.now().toUTCString()
+                createdAt: Date.now()
             });
 
             result = await newAddress.save();
@@ -16,6 +16,7 @@ class AddressRepository {
                 data: result
             };
         } catch (error) {
+            console.log(error)
             return {
                 success: false,
                 errorMessage: error,

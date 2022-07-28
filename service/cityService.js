@@ -6,6 +6,9 @@ class CityService {
         return await cityRepository.getCitys();
     }
 
+    async getCityByCode(cityCode) {
+        return await cityRepository.getCityByCode(cityCode);
+    }
     
 }
 

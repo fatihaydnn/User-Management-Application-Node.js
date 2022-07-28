@@ -28,8 +28,14 @@
         <li class="nav-item">
           <a class="nav-link" href="http://localhost:3000/log">Log</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="http://localhost:3000/address">Adres</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Adres
+          </a>
+          <ul class="dropdown-menu dropdown-menu">
+            <li><a class="nav-link" href="http://localhost:3000/addressAdd">Adres Ekle</a></li>
+            <li><a class="nav-link" href="http://localhost:3000/address">Adres Düzenle</a></li>
+          </ul>
         </li>
       </ul>
     </div>
@@ -71,9 +77,6 @@
 
         <button type="submit" class="btn btn-primary">Register User</button>
 
-        <!-- <button class="btn btn-light">
-          <a href="http://localhost:3000/login">Login</a>
-        </button> -->
 
       </form>
     </div>

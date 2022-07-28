@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
     fetch("http://localhost:3000/address/getAllCities", {
         method: 'GET',
@@ -89,5 +88,42 @@ $(document).ready(function () {
                     console.log(error)
                 });
         }
+    });
+});
+
+$("#addressAdd").submit(function (event) {
+
+    // Stop form from submitting normally (tıklandığında sabit kalmasını aynı yerde kalmasını sağlıyor!!)
+    event.preventDefault();
+
+    // Get some values from elements on the page:(sayfada ki verileri orda vermiş olduğumuz name etiketleri sayesinde burada kolayca çekebildik!!)
+    var $form = $(this);
+    title = $form.find("input[name='title']").val(),
+        city = $form.find("select[name='city']").val(),
+        district = $form.find("select[name='district']").val(),
+        street = $form.find("select[name='street']").val(),
+        longAddress = $form.find("textarea[name='longAddress']").val();
+    // Send the data using post(Apiye yolluyor)
+    console.log({ address: { title: title, city: city, district: district, street: street, longAddress: longAddress } })
+
+    var posting = $.post("http://localhost:3000/address/all", { address: { title: title, city: city, district: district, street: street, longAddress: longAddress } });
+
+    // Put the results in a div
+
+
+    posting.done(function (data) {
+        console.log(data)
+        if (data.success) {
+            alert("Başarıyla Kayıt Olundu!!")
+            document.location.href = "/address";
+        } else {
+            alert("Hata Oluştu!!")
+        }
+
+    });
+
+    posting.fail(function (data) {
+        alert("Hata")
+        console.log(data)
     });
 });

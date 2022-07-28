@@ -25,7 +25,7 @@ const schema = mongoose.Schema({
         required: true
     },
 
-    address: {
+    longAddress: {
         type: String,
         required: true
     },
