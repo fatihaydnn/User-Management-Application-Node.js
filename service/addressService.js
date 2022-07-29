@@ -10,6 +10,10 @@ class AddressService {
         return await addressRepository.getAddresss();
     }
 
+    // async update(id, entity) {
+    //     return await addressRepository.update(id, entity)
+    // }
+
     
 }
 

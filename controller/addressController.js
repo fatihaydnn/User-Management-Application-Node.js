@@ -70,6 +70,77 @@ class AddressController {
         }
     };
 
+    // async updateDistrict(req, res, next) {
+    //     const { id, name, code, user, city } = req.body;
+    //     var check = await districtService.checkExists(code, name.trim().turkishToUpper(), city, id)
+    //     if (check.success) {
+    //         return res.send({
+    //             success: false,
+    //             field: [
+    //                 {
+    //                     field: "codeDistrict",
+    //                     errorMessage: "Girmiş Olduğunuz İlçe Kodu Bulunmaktadır"
+    //                 },
+    //                 {
+    //                     field: "nameDistrict",
+    //                     errorMessage: "Girmiş Olduğunuz İlçe Adı Sistemde Bulunmaktadır"
+    //                 }
+    //             ]
+    //         })
+    //     }
+    //     let result = await districtService.update(id, {
+    //         districtName: name.trim().turkishToUpper(),
+    //         districtCode: code,
+    //         updatedAt: new Date(),
+    //         updatedBy: user.userId
+    //     });
+
+    //     let activityLog = await authorizedActivityLogService.insertLog({
+    //         user: user.userId,
+    //         type: "action",
+    //         actionType: "update",
+    //         description: name + " ilçesi güncellendi."
+    //     });
+
+    //     res.send(result);
+    // };
+
+    // async updateStreet(req, res, next) {
+    //     const { id, name, code, user, district } = req.body;
+    //     var check = await streetService.checkExists(code, name.trim().turkishToUpper(), district, id);
+    //     if (check.success) {
+    //         return res.send({
+    //             success: false,
+    //             field: [
+    //                 {
+    //                     field: "codeStreet",
+    //                     errorMessage: "Girmiş Olduğunuz Sokak Kodu Bulunmaktadır"
+    //                 },
+    //                 {
+    //                     field: "nameStreet",
+    //                     errorMessage: "Girmiş Olduğunuz Sokak Adı Sistemde Bulunmaktadır"
+    //                 }
+    //             ]
+    //         })
+    //     }
+    //     let result = await streetService.update(id, {
+    //         streetName: name.trim().turkishToUpper(),
+    //         streetCode: code,
+    //         updatedAt: new Date(),
+    //         updatedBy: user.userId
+    //     });
+
+    //     let activityLog = await authorizedActivityLogService.insertLog({
+    //         user: user.userId,
+    //         type: "action",
+    //         actionType: "update",
+    //         description: name + " sokağı güncellendi."
+    //     });
+
+    //     res.send(result);
+    // };
+
+
 }
 
 module.exports = AddressController;

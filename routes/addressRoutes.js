@@ -19,6 +19,12 @@ router.get(
 );
 
 router.get(
+    "/getAddresses",
+    validationController.validateRequest,
+    addressController.getAddresss
+);
+
+router.get(
     "/getDistricts",
     query(["cityCode"]).exists().isString().isNumeric(),
     validationController.validateRequest,
@@ -35,7 +41,6 @@ router.get(
 router.post(
     "/all",
     validationController.validateRequest,
-    //authorizationController.validateToken,
     addressController.createAddress
 );
 
